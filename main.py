@@ -2,11 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 o = Options()
 o.add_experimental_option("detach", True)
 
-driver = webdriver.Chrome(options=o)
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=o)
 
 driver.get('http://localhost:5173')
 
