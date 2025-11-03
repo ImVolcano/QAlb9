@@ -29,10 +29,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install selenium
         
-    - name: Run Node server
+    - name: Run scripts
       run: |
-        node app.js
+        Start-Process -FilePath "node" -ArgumentList "app.js" -NoNewWindow
         
-    - name: Run Python script
-      run: |
         python main.py
+        
+        Wait-Process -Name "node" -ErrorAction SilentlyContinue
