@@ -7,7 +7,7 @@ http.createServer(function(request,response){
 }).listen(3000, "127.0.0.1",function(){
     console.log("Сервер начал прослушивание запросов на порту 3000");
     setTimeout(() => {
-  console.log('Выход через 5 секунд');
+  console.log('Выход через 30 секунд');
   process.exit(0); // Выход с кодом успеха
-}, 5000);;
+}, 30000);;
 })
