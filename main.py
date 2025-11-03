@@ -8,7 +8,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 o = Options()
 o.add_experimental_option("detach", True)
 
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=o)
+service = ChromeService(executable_path=ChromeDriverManager().install())
+
+driver = webdriver.Chrome(service=service, options=o)
 
 driver.get('http://localhost:5173')
 
